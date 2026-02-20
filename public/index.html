@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KodNest Secure Bank - Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles-new.css">
+</head>
+
+<body>
+    <!-- Decorative Credit Cards -->
+    <div class="card-decoration card-1"></div>
+    <div class="card-decoration card-2"></div>
+    <div class="card-decoration card-3"></div>
+
+    <div class="container">
+        <div class="bank-header">
+            <div class="logo">
+                <svg viewBox="0 0 64 64" class="logo-icon">
+                    <circle cx="32" cy="32" r="30" fill="url(#gradient1)" />
+                    <path d="M32 12 L48 24 L48 48 L16 48 L16 24 Z" fill="white" opacity="0.9" />
+                    <rect x="28" y="32" width="8" height="16" fill="#667eea" />
+                    <rect x="20" y="28" width="6" height="20" fill="#667eea" opacity="0.7" />
+                    <rect x="38" y="28" width="6" height="20" fill="#667eea" opacity="0.7" />
+                    <defs>
+                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#667eea" />
+                            <stop offset="100%" style="stop-color:#764ba2" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <h1 class="bank-name">🏦 KodNest Secure Bank</h1>
+            <p class="tagline">Keep Your Money Safe With Us 💙</p>
+        </div>
+
+        <div class="glass-card">
+            <h2 class="form-title">Create Your Account</h2>
+
+            <form id="registerForm">
+                <div class="form-grid">
+                    <div class="input-group">
+                        <input type="text" id="uid" required>
+                        <label>User ID</label>
+                        <span class="icon">🆔</span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" id="username" required>
+                        <label>Username</label>
+                        <span class="icon">👤</span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" id="email" required>
+                        <label>Email Address</label>
+                        <span class="icon">✉️</span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="tel" id="phone" required>
+                        <label>Phone Number</label>
+                        <span class="icon">📱</span>
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" id="password" required>
+                        <label>Password</label>
+                        <span class="icon">🔒</span>
+                        <button type="button" class="toggle-password" onclick="togglePassword('password')">👁️</button>
+                    </div>
+
+                    <div class="input-group">
+                        <select id="role" required>
+                            <option value="">Select Role</option>
+                            <option value="customer" selected>Customer</option>
+                            <option value="manager">Manager</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                        <label class="select-label">Role</label>
+                        <span class="icon">👔</span>
+                    </div>
+
+                    <div class="input-group form-grid-full">
+                        <input type="number" id="balance" value="100000" required>
+                        <label>Initial Balance (₹)</label>
+                        <span class="icon">💰</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit" id="registerBtn">
+                    <span class="btn-text">Register Now</span>
+                    <div class="loader" style="display: none;"></div>
+                </button>
+            </form>
+
+            <p class="switch-text">
+                Already have an account? <a href="login.html">Login here 💙</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="register.js"></script>
+</body>
+
+</html>
