@@ -73,7 +73,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
       hideLoader('registerBtn');
       showMessage('✨ Registration successful! Redirecting to login...');
       setTimeout(() => {
-        window.location.href = '/login-pro.html';
+        window.location.href = '/login.html';
       }, 1500);
     } else {
       hideLoader('registerBtn');

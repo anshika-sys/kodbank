@@ -8,7 +8,7 @@ async function init() {
     });
 
     if (!response.ok) {
-      window.location.href = '/login-pro.html';
+      window.location.href = '/login.html';
       return;
     }
 
@@ -22,7 +22,7 @@ async function init() {
     }
   } catch (error) {
     console.error('Init error:', error);
-    window.location.href = '/login-pro.html';
+    window.location.href = '/login.html';
   }
 }
 
@@ -318,10 +318,10 @@ async function logout() {
       method: 'POST',
       credentials: 'include'
     });
-    window.location.href = '/login-pro.html';
+    window.location.href = '/login.html';
   } catch (error) {
     console.error('Logout error:', error);
-    window.location.href = '/login-pro.html';
+    window.location.href = '/login.html';
   }
 }
 

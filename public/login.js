@@ -81,7 +81,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
       hideLoader('loginBtn');
       showMessage('✨ Login successful! Redirecting...');
       setTimeout(() => {
-        window.location.href = '/dashboard-pro.html';
+        window.location.href = '/dashboard.html';
       }, 1500);
     } else {
       hideLoader('loginBtn');
