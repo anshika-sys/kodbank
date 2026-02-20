@@ -27,28 +27,14 @@ function hideLoader(buttonId) {
 
 function showMessage(message, isError = false) {
   const messageDiv = document.createElement('div');
-  messageDiv.style.cssText = `
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: ${isError ? 'rgba(255, 107, 107, 0.95)' : 'rgba(76, 175, 80, 0.95)'};
-    color: white;
-    padding: 15px 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    z-index: 2000;
-    animation: slideIn 0.5s ease;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    max-width: 350px;
-  `;
+  messageDiv.className = `message-toast ${isError ? 'error' : 'success'}`;
   messageDiv.textContent = message;
   document.body.appendChild(messageDiv);
 
   setTimeout(() => {
     messageDiv.style.animation = 'slideOut 0.5s ease';
     setTimeout(() => messageDiv.remove(), 500);
-  }, 4000);
+  }, 3000);
 }
 
 document.getElementById('registerForm').addEventListener('submit', async (e) => {
@@ -87,7 +73,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
       hideLoader('registerBtn');
       showMessage('✨ Registration successful! Redirecting to login...');
       setTimeout(() => {
-        window.location.href = '/login.html';
+        window.location.href = '/login-pro.html';
       }, 1500);
     } else {
       hideLoader('registerBtn');
@@ -99,16 +85,3 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     console.error('Registration error:', error);
   }
 });
-
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes slideIn {
-    from { transform: translateX(400px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-  }
-  @keyframes slideOut {
-    from { transform: translateX(0); opacity: 1; }
-    to { transform: translateX(400px); opacity: 0; }
-  }
-`;
-document.head.appendChild(style);
